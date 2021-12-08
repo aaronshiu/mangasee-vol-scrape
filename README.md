@@ -9,23 +9,26 @@ Sometimes you want some content displayed on the Kindle where the front-page of 
 # How to use
 1) Specify a download location for MangaSee content/main directory to work from i.e. "D:/Mangas". Be sure to change *line 17* to reflect this path.
 
-2a) Download the geckodriver executable browser (Firefox-driver) from: https://github.com/mozilla/geckodriver/releases i.e. geckodriver-v0.30.0-win64.zip.
-2b) Unzip the executable file to a path of your choice i.e. "D:/Documents/geckodriver.exe", and be sure to change *line 19* to reflect this path.
+2) Download the geckodriver executable browser (Firefox-driver) from: https://github.com/mozilla/geckodriver/releases i.e. geckodriver-v0.30.0-win64.zip.
 
-3a) Install Gallery-dl from: https://github.com/mikf/gallery-dl. *Tested with Chocolatey*
-3b) Make sure that *gallery-dl* is a Windows PATH Environment Variable i.e. if you type *gallery-dl --help* in PowerShell, it produces "usage: gallery-dl.exe [OPTION]... URL..."
+3) Unzip the executable file to a path of your choice i.e. "D:/Documents/geckodriver.exe", and be sure to change *line 19* to reflect this path.
 
-4a) Clone/download KindleComicConverter (KCC): https://github.com/ciromattia/kcc and extract the archive to a location if not already unzipped, change *line 19* to reflect the path to the *kcc-c2e.py* file.
-4b) As of this commit, modify *line 258* in "kcc/kindlecomicconverter/image.py" as I came across an error when executing KCC conversion, 
+4) Install Gallery-dl from: https://github.com/mikf/gallery-dl. *Tested with Chocolatey*
+
+5) Make sure that *gallery-dl* is a Windows PATH Environment Variable i.e. if you type *gallery-dl --help* in PowerShell, it produces "usage: gallery-dl.exe [OPTION]... URL..."
+
+6) Clone/download KindleComicConverter (KCC): https://github.com/ciromattia/kcc and extract the archive to a location if not already unzipped, change *line 19* to reflect the path to the *kcc-c2e.py* file.
+
+7) As of this commit, modify *line 258* in "kcc/kindlecomicconverter/image.py" as I came across an error when executing KCC conversion, 
       From: "self.image = ImageOps.autocontrast(Image.eval(self.image, lambda a: 255 * (a / 255.) ** gamma))"
       To: "self.image = ImageOps.autocontrast(Image.eval(self.image, lambda a: int(255 * (a / 255.) ** gamma)))"
-      
-    Essentially, wrapping the "255 * (a / 255.) ** gamma" lambda function in an "int()"... **https://github.com/ciromattia/kcc/issues/406**
-5) Search for a particular piece of content (that is hosted on MangaSee) with a **TYPICAL WIKIPEDIA PAGE for a volume-chapter table (see issue 2)**
+      Essentially, wrapping the "255 * (a / 255.) ** gamma" lambda function in an "int()"... **https://github.com/ciromattia/kcc/issues/406**
 
-6) After the program takes the search query, scrapes MangaSee for the query, downloads the specified content through Gallery-dl, sorts the main chapters and side-chapters based on the Wikipedia table, archives the directory into .CBZ and converts to .MOBI through KindleComicConverter, you can transfer the .MOBI files left in the download/storage location to your Kindle, either manually or through the widely-used Calibre e-book manager: https://github.com/kovidgoyal/calibre.
+8) Search for a particular piece of content (that is hosted on MangaSee) with a **TYPICAL WIKIPEDIA PAGE for a volume-chapter table (see issue 2)**
 
-(Optional: DuckDuckGo was chosen as the search engine because it is quite privacy-oriented, but you can modify *line 22* to use any other search engine of choice, i.e. Google, because... well... DuckDuckGo uses Bing... ._.)
+9) After the program takes the search query, scrapes MangaSee for the query, downloads the specified content through Gallery-dl, sorts the main chapters and side-chapters based on the Wikipedia table, archives the directory into .CBZ and converts to .MOBI through KindleComicConverter, you can transfer the .MOBI files left in the download/storage location to your Kindle, either manually or through the widely-used Calibre e-book manager: https://github.com/kovidgoyal/calibre.
+
+10. Optional: DuckDuckGo was chosen as the search engine because it is quite privacy-oriented, but you can modify *line 22* to use any other search engine of choice, i.e. Google, because... well... DuckDuckGo uses Bing! ._.
 
 
 # Known issues
