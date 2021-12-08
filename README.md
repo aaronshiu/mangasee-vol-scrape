@@ -55,7 +55,6 @@ There is currently no way around this, so if you would like to keep the original
 
 This script is probably riddled with bugs and unprofessionalism but hey, it somewhat works xD
 SMTPlib was attempted to allow for wireless transfer functionality, but unless you have your own email exchange server (I doubt many do, including myself), most email providers allow a paltry file size for emailing content for the Send-To-Kindle service (even zipped), i.e. 20 MB. Compression was also tried, but if you had to compress some 70 MB+ files down to 20 MB recursively, I would think most lossy-lossy JPEG->JPEG conversions would look tacky at best.
-If wiki/fandom sites are more standardised there might be merit in using them for volume/chapter information instead of Wikipedia, but at the end of the day all these websites are all fan-made so there is no standard table with <li></li> type of chapter information in a neat little organised manner that I can pull from that includes all mainstream and non-mainstream content.
+If wiki/fandom sites are more standardised there might be merit in using them for volume/chapter information instead of Wikipedia, but at the end of the day all these websites are all fan-made so there is no standard table with some simple HTML list tag type of chapter information in a neat little organised manner that I can pull from that includes all mainstream and non-mainstream content.
 
 Have a good day! :)
-
