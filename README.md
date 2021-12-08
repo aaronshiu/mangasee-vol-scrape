@@ -1,9 +1,11 @@
 # mangasee-vol-scrape
 Scrapes MangaSee for content, passes URL to Gallery-dl, sorts chapters into volumes via Wikipedia table, converts to MOBI files for the Kindle.
-Python requirements:
-- BeautifulSoup4,
-- Selenium
 *Windows-only for now*
+
+Python requirements:
+- BeautifulSoup4
+- Selenium
+
 
 # Why?
 Sometimes you want some content displayed on the Kindle where the front-page of the volume is the cover of the volume/block of chapters and not just a random page within the range of chapters. So for the most part, this script simply scrapes MangaSee for content, downloads said content, searches for some chapter/volume information, converts to MOBI for transferring to your Kindle via Calibre or manual USB connection.
