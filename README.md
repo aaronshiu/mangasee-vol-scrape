@@ -22,7 +22,7 @@ Sometimes you want some content displayed on the Kindle where the front-page of 
 7) As of this commit, modify *line 258* in "kcc/kindlecomicconverter/image.py" as I came across an error when executing KCC conversion, 
       - From: "self.image = ImageOps.autocontrast(Image.eval(self.image, lambda a: 255 * (a / 255.) ** gamma))"
       - To: "self.image = ImageOps.autocontrast(Image.eval(self.image, lambda a: int(255 * (a / 255.) ** gamma)))"
-      Essentially, wrapping the "255 * (a / 255.) ** gamma" lambda function in an "int()"... **https://github.com/ciromattia/kcc/issues/406**
+      - Essentially, wrapping the "255 * (a / 255.) ** gamma" lambda function in an "int()"... **https://github.com/ciromattia/kcc/issues/406**
 
 8) Search for a particular piece of content (that is hosted on MangaSee) with a **TYPICAL WIKIPEDIA PAGE for a volume-chapter table (see issue 2)**
 
