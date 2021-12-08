@@ -1,6 +1,8 @@
 # mangasee-vol-scrape
 Scrapes MangaSee for content, passes URL to Gallery-dl, sorts chapters into volumes via Wikipedia table, converts to MOBI files for the Kindle.
-Uses: BeautifulSoup4, Selenium as Python libraries.
+Python requirements:
+- BeautifulSoup4,
+- Selenium
 *Windows-only for now*
 
 # Why?
