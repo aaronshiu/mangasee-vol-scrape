@@ -24,8 +24,8 @@ Sometimes you want some content displayed on the Kindle where the front-page of 
 6) Clone/download KindleComicConverter (KCC): https://github.com/ciromattia/kcc and extract the archive to a location if not already unzipped, change *line 19* to reflect the path to the *kcc-c2e.py* file.
 
 7) As of this commit, modify *line 258* in "kcc/kindlecomicconverter/image.py" as I came across an error when executing KCC conversion, 
-      - From: "self.image = ImageOps.autocontrast(Image.eval(self.image, lambda a: 255 * (a / 255.) ** gamma))"
-      - To: "self.image = ImageOps.autocontrast(Image.eval(self.image, lambda a: int(255 * (a / 255.) ** gamma)))"
+      - From: "self.image = ImageOps.autocontrast(Image.eval(self.image, lambda a: 255 * (a / 255.) ** gamma))",
+      - To: "self.image = ImageOps.autocontrast(Image.eval(self.image, lambda a: int(255 * (a / 255.) ** gamma)))",
       - Essentially, wrapping the "255 * (a / 255.) ** gamma" lambda function in an "int()"... **https://github.com/ciromattia/kcc/issues/406**
 
 8) Search for a particular piece of content (that is hosted on MangaSee) with a **TYPICAL WIKIPEDIA PAGE for a volume-chapter table (see issue 2)**
@@ -44,7 +44,7 @@ An example of something that's been tested to work would be:
   - Input "1" as the first scraped choice for "Boruto - Naruto Next Generations",
   - Downloads content,
   - Searches for "Boruto - Naruto Next Generations list of chapters" on DuckDuckGo,
-  - Goes to "https://en.wikipedia.org/wiki/List_of_Boruto:_Naruto_Next_Generations_chapters"
+  - Goes to "https://en.wikipedia.org/wiki/List_of_Boruto:_Naruto_Next_Generations_chapters",
   - Takes note of the latest Volume in Tankōbon Format as being Volume 15 with the last chapter of the volume being Chapter 59 **as of 08/12/2021** and sorts chapters into volumes,
   - Converts to a Kindle Paperwhite 3/4 optimised MOBI format and deletes original files.
 
@@ -53,7 +53,7 @@ An example of something that does not work would be:
   - Input "1" as the first scraped choice for "All You Need Is Kill",
   - Downloads content, 
   - Searches for "All You Need Is Kill list of chapters" on DuckDuckGo,
-  - Goes to "https://en.wikipedia.org/wiki/All_You_Need_Is_Kill"
+  - Goes to "https://en.wikipedia.org/wiki/All_You_Need_Is_Kill",
   - Program fails as there is an absence of a chapter/volume table with the standard format.
 
 There is currently no way around this, so if you would like to keep the original files after scraping on MangaSee and perform no other operations, comment out *lines 164-171*
@@ -67,8 +67,8 @@ If wiki/fandom sites are more standardised there might be merit in using them fo
 Oh, I don't host any content or endorse any kind of malicious intention. Just a smol' fun experiment if you will.
 
 # Credits
-- KCC is made by Ciro Mattia Gonano and Paweł Jastrzębski.
-- Gallery-dl is made by Mike Fährmann.
+- KCC is made by Ciro Mattia Gonano and Paweł Jastrzębski,
+- Gallery-dl is made by Mike Fährmann,
 - All the awesome people who conntributed to open-source and developed nifty libraries for the benefit of many!
 
 Have a good day! :)
